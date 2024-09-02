@@ -1,0 +1,18 @@
+<ion-content [fullscreen]="true" class="backgroundTest2">
+  <ion-header>
+    <h1 style="text-align: center;">Iniciar sesión</h1>
+  </ion-header>
+
+  <ion-card>
+    <ion-item>
+      <ion-input label="Nombre de usuario" labelPlacement="floating" type="text" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Contraseña" labelPlacement="floating" type="password" ></ion-input>
+    </ion-item>
+    <a style="text-decoration: none;" [routerLink]="['/reset-password']" >¿Olvidaste tu contraseña?</a>
+  </ion-card>
+  <div style="display: flex; justify-content: center;">
+    <ion-button [routerLink]="['/home']">Iniciar sesión</ion-button>
+  </div>
+</ion-content>
