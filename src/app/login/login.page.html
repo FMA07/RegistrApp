@@ -5,14 +5,14 @@
 
   <ion-card>
     <ion-item>
-      <ion-input label="Nombre de usuario" labelPlacement="floating" type="text" ></ion-input>
+      <ion-input label="Nombre de usuario" labelPlacement="floating" type="text" [(ngModel)]="login.Usuario"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input label="Contraseña" labelPlacement="floating" type="password" ></ion-input>
+      <ion-input label="Contraseña" labelPlacement="floating" type="password" [(ngModel)]="login.Password"></ion-input>
     </ion-item>
     <a style="text-decoration: none;" [routerLink]="['/reset-password']" >¿Olvidaste tu contraseña?</a>
   </ion-card>
   <div style="display: flex; justify-content: center;">
-    <ion-button [routerLink]="['/home']">Iniciar sesión</ion-button>
+    <ion-button (click)="iniciarSesion()">Iniciar sesión</ion-button>
   </div>
 </ion-content>
