@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,13 +9,18 @@ import { Router } from '@angular/router';
 })
 export class ResetPasswordPage implements OnInit {
 
-  Usuario: string="";
+  UsuarioDeLogin: string="";
+  UsuarioComparativo: string="";
   Password: string="";
 
-  constructor(private router: Router) { }
+  constructor(public alertaContrasenna: AlertController, private router: Router) { }
 
   ngOnInit(){
     const state = this.router.getCurrentNavigation()?.extras.state;
+
+    if (state && state['user']){
+      this.UsuarioDeLogin = state['user']
+    }
 
     if (state && state['password']){
       this.Password = state['password'];
@@ -24,15 +30,21 @@ export class ResetPasswordPage implements OnInit {
     }
   }
 
-  validarLargoUsuario(dato: string){
-    if(dato.length>=3 && dato.length<=8){
+  validarUsuario(dato = this.UsuarioComparativo){
+    if(dato == this.UsuarioDeLogin){
+      this.presentarAlerta();
       return true
     }
     return false;
   }
 
-  recuperarPass(){
-    if(this.validarLargoUsuario(this.Usuario)){}
-  }
+  async presentarAlerta(){
+    const alerta = await this.alertaContrasenna.create({
+      header: 'Su contraseña es:',
+      message: this.Password,
+      buttons: ['OK']
+    });
 
+    await alerta.present();
+  }
 }
