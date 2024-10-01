@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { NavigationExtras , Router} from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,9 +15,11 @@ export class LoginPage implements OnInit {
     Password:""
   }
 
+  private token = 'tokenFalso123'
+
   field:string="";
 
-  constructor(public toastController: ToastController, private router:Router) { }
+  constructor(public toastController: ToastController, private router:Router, private authService: AuthService) { }
 
   ngOnInit() {
   }
@@ -61,6 +64,7 @@ export class LoginPage implements OnInit {
       if(this.validarLargoUsuario(this.login.Usuario)){
         if(this.validarLargoPass(this.login.Password)){
           this.presentToast("Bienvenido "+ this.login.Usuario);
+          this.authService.storeToken(this.token);
           let navigationExtras:NavigationExtras={
             state: {user:this.login.Usuario}
           }
