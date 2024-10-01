@@ -6,4 +6,15 @@
   <div style="text-align: center;">
     <ion-button (click)="registerAttendance()">Registrar Asistencia</ion-button>
   </div>
+  <ion-toolbar>
+    <ion-segment (ionChange) ="segmentChanged($event)">
+      <ion-segment-button value="docente-component"></ion-segment-button>
+      <ion-segment-button value="qr-code-component"></ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  <footer>
+    <div style="align-content: center;">
+      <ion-button>Cerrar sesión</ion-button>
+    </div>
+  </footer>
 </ion-content>

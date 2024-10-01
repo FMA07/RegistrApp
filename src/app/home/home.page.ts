@@ -18,7 +18,15 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 export class HomePage implements OnInit {
   username: string = '';
 
-  constructor(private router: Router, private alertController: AlertController) {}
+  constructor(private router: Router, private alertController: AlertController) {
+    this.router.navigate(['home/docente-component'])
+  }
+
+  segmentChanged($event:any){
+    console.log($event.detail.value);
+    let direction =$event.detail.value
+    this.router.navigate(['home/'+direction])
+  }
 
   ngOnInit() {
     const state = this.router.getCurrentNavigation()?.extras.state;
@@ -38,5 +46,9 @@ export class HomePage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  cerrarSesion(){
+
   }
 }
