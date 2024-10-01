@@ -2,7 +2,21 @@
     "usuarios": [
         {
             "id":1,
-            "nombre": 
+            "nombre": "admin",
+            "usuario": "admin",
+            "email": "correofalso@gmail.com"
+        },
+        {
+            "id":2,
+            "nombre": "Felipe",
+            "usuario": "FMA07",
+            "email": "fe.mayoral@duocuc.cl"
+        },
+        {
+            "id":3,
+            "nombre": "Benjamin",
+            "usuario": "pepinillo",
+            "email": "be.penailillo@duocuc.cl"
         }
     ]
 }
