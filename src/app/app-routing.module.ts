@@ -20,9 +20,15 @@ const routes: Routes = [
     loadChildren: () => import('./reset-password/reset-password.module').then( m => m.ResetPasswordPageModule)
   },
   {
+    path: 'tabs',
+    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+  {
     path: '**',
     loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
   },
+  
+
 ];
 
 @NgModule({
