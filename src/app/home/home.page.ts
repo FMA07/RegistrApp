@@ -18,9 +18,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 export class HomePage implements OnInit {
   username: string = '';
 
-  constructor(private router: Router, private alertController: AlertController) {
-    this.router.navigate(['home/docente-component'])
-  }
+  constructor(private router: Router, private alertController: AlertController) { }
 
   segmentChanged($event:any){
     console.log($event.detail.value);

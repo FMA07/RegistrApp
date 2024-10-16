@@ -64,7 +64,7 @@ export class LoginPage implements OnInit {
       if(this.validarLargoUsuario(this.login.Usuario)){
         if(this.validarLargoPass(this.login.Password)){
           this.presentToast("Bienvenido "+ this.login.Usuario);
-          this.authService.storeToken(this.token);
+          
           let navigationExtras:NavigationExtras={
             state: {user:this.login.Usuario}
           }
