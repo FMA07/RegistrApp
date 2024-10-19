@@ -1,0 +1,42 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "nombre": "admin",
+      "usuario": "admin",
+      "email": "correofalso@gmail.com",
+      "contraseña": "admin123",
+      "rol": "admin"
+    },
+    {
+      "id": "2",
+      "nombre": "Felipe",
+      "usuario": "FMA07",
+      "email": "fe.mayoral@duocuc.cl",
+      "contraseña": "felipe123",
+      "rol": "alumno"
+    },
+    {
+      "id": "3",
+      "nombre": "Benjamin",
+      "usuario": "pepinill",
+      "email": "be.penailillo@duocuc.cl",
+      "contraseña": "benjamin123",
+      "rol": "profesor"
+    }
+  ],
+  "classes": [
+    {
+      "id": "948c",
+      "title": "VIKTOR",
+      "description": "NO LA COME",
+      "date": "2021-05-12T15:50:00"
+    },
+    {
+      "id": "4959",
+      "title": "IAN ",
+      "description": "SE LA RE CONTRA COME",
+      "date": "2021-05-11T15:50:00"
+    }
+  ]
+}
